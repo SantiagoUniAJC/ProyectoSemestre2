@@ -18,9 +18,9 @@ public class VentanaMenu extends JFrame {
         setLayout(new FlowLayout());
 
         // Crear botones de menú
-        JButton botonOpcion1 = new JButton("Facturación");
-        JButton botonOpcion2 = new JButton("Cuentas por Pagar");
-        JButton botonOpcion3 = new JButton("Cuentas por Cobrar");
+        JButton botonOpcion1 = new JButton("Conductor");
+        JButton botonOpcion2 = new JButton("Taquilla");
+        JButton botonOpcion3 = new JButton("Rutas");
         JButton botonOpcion4 = new JButton("Inventarios");
         JButton botonOpcion5 = new JButton("CRM");
         JButton botonOpcion6 = new JButton("Nómina");
