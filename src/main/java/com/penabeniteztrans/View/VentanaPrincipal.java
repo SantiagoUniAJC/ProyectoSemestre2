@@ -48,12 +48,12 @@ public class VentanaPrincipal extends JFrame {
         panel.add(imagenFondo);
 
         JLabel Logo = new JLabel("");
-        Logo.setBounds(722, 80, 150, 156);
+        Logo.setBounds(600, 120, 350, 156);
         Logo.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/static/images/aH-1501px.png")));
         panel.add(Logo);
 
         JPanel panel_1 = new JPanel();
-        panel_1.setBounds(0, 500, 910, 37);
+        panel_1.setBounds(0, 500, 910, 50);
         panel_1.setBackground(new Color(12, 138, 199));
         panel.add(panel_1);
         panel_1.setLayout(null);

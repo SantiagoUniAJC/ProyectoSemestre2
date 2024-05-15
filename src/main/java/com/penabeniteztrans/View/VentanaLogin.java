@@ -274,7 +274,7 @@ public class VentanaLogin extends JFrame {
 
         JLabel lblNewLabel_1 = new JLabel("");
         lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_1.setIcon(new ImageIcon(VentanaLogin.class.getResource("/static/images/lOGO-501PX.png")));
+        lblNewLabel_1.setIcon(new ImageIcon(VentanaLogin.class.getResource("/static/images/aH-40px.png")));
         lblNewLabel_1.setBounds(45, 0, 400, 159);
         panel.add(lblNewLabel_1);
 

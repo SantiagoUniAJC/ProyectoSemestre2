@@ -11,7 +11,6 @@ public class Main {
         /**
          * Despliegue de la aplicacion.
          */
-
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
