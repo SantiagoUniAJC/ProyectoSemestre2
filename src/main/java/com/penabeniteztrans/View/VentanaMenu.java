@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VentanaMenu extends JFrame {
+
     public VentanaMenu() {
         super("Menú de Opciones");
 
@@ -21,7 +22,7 @@ public class VentanaMenu extends JFrame {
         JButton botonOpcion1 = new JButton("Conductor");
         JButton botonOpcion2 = new JButton("Taquilla");
         JButton botonOpcion3 = new JButton("Rutas");
-        JButton botonOpcion4 = new JButton("Inventarios");
+        JButton btnBuses = new JButton("Buses");
         JButton botonOpcion5 = new JButton("CRM");
         JButton botonOpcion6 = new JButton("Nómina");
 
@@ -29,7 +30,7 @@ public class VentanaMenu extends JFrame {
         add(botonOpcion1);
         add(botonOpcion2);
         add(botonOpcion3);
-        add(botonOpcion4);
+        add(btnBuses);
         add(botonOpcion5);
         add(botonOpcion6);
 
@@ -55,10 +56,13 @@ public class VentanaMenu extends JFrame {
             }
         });
 
-        botonOpcion4.addActionListener(new ActionListener() {
+        // ActionListener para el botón de Buses
+        btnBuses.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Seleccionaste la Opción 4");
+                // Crear una nueva ventana de Buses
+                VentanaBuses ventanaBuses = new VentanaBuses(null);
+                ventanaBuses.setVisible(true);
             }
         });
 
