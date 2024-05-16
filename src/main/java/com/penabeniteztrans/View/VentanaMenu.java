@@ -1,9 +1,14 @@
 package com.penabeniteztrans.View;
 
 import javax.swing.*;
+
+import com.penabeniteztrans.Model.Bus;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VentanaMenu extends JFrame {
 
@@ -56,20 +61,18 @@ public class VentanaMenu extends JFrame {
             }
         });
 
-        // ActionListener para el botón de Buses
         btnBuses.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Crear una nueva ventana de Buses
-                VentanaBuses ventanaBuses = new VentanaBuses(null);
-                ventanaBuses.setVisible(true);
-            }
-        });
+                // Crear una lista de objetos Bus con los buses deseados
+                List<Bus> buses = new ArrayList<>();
+                buses.add(new Bus("Bus 1", 20));
+                buses.add(new Bus("Bus 2", 30));
+                buses.add(new Bus("Bus 3", 25));
 
-        botonOpcion5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Seleccionaste la Opción 5");
+                // Crear una nueva ventana de Buses con la lista de buses
+                VentanaBuses ventanaBuses = new VentanaBuses(buses);
+                ventanaBuses.setVisible(true);
             }
         });
 
