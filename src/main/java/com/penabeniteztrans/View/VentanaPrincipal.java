@@ -58,7 +58,7 @@ public class VentanaPrincipal extends JFrame {
         panel.add(panel_1);
         panel_1.setLayout(null);
 
-        JLabel lblCopyR = new JLabel("Desarrollado por Santiago Peña & Benitez  © 2024");
+        JLabel lblCopyR = new JLabel("Desarrollado por Santiago Peña & Elkin Benitez  © 2024");
         lblCopyR.setBounds(150, 11, 600, 19);
         lblCopyR.setForeground(new Color(240, 248, 255));
         lblCopyR.setFont(new Font("Roboto", Font.PLAIN, 16));
