@@ -210,7 +210,7 @@ public class VentanaLogin extends JFrame {
 
             private boolean validarCredenciales(String cedula, String contrasena) {
                 // Logica para validar las credenciales
-                return cedula.equals("75094924") && contrasena.equals("root");
+                return cedula.equals("root") && contrasena.equals("root");
             }
 
             @Override
