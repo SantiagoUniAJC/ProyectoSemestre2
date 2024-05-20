@@ -1,9 +1,8 @@
 package com.penabeniteztrans.View;
 
+// paquetes necesarios para la aplicacion.
 import javax.swing.*;
-
 import com.penabeniteztrans.Model.Bus;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +11,7 @@ import java.util.List;
 
 public class VentanaMenu extends JFrame {
 
+    // Constructor de la ventana
     public VentanaMenu() {
         super("Menú de Opciones");
 
@@ -60,7 +60,7 @@ public class VentanaMenu extends JFrame {
                 JOptionPane.showMessageDialog(null, "Seleccionaste la Opción 3");
             }
         });
-
+        // Agregar ActionListener para manejar los click en el botón de Buses
         btnBuses.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

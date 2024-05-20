@@ -1,5 +1,6 @@
 package com.penabeniteztrans.View;
 
+// paquetes necesarios para la aplicacion.
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.SystemColor;
@@ -7,7 +8,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -21,12 +21,14 @@ import javax.swing.border.EmptyBorder;
 
 public class VentanaLogin extends JFrame {
 
+    // Atributos de la clase VentanaLogin
     private JPanel contentPane;
-    private JTextField txtUsuario;
-    private JPasswordField txtContrasena;
+    private JTextField textoUsuario;
+    private JPasswordField textoContrasena;
     int xMouse, yMouse;
     private JLabel labelExit;
 
+    // Constructor de la clase VentanaLogin
     public VentanaLogin() {
         setResizable(false);
         setUndecorated(true);
@@ -38,41 +40,49 @@ public class VentanaLogin extends JFrame {
         contentPane.setLayout(null);
         setLocationRelativeTo(null);
 
+        // Panel principal
         JPanel panel = new JPanel();
         panel.setBounds(0, 0, 788, 527);
         panel.setBackground(Color.WHITE);
         contentPane.add(panel);
         panel.setLayout(null);
 
-        JPanel panel_1 = new JPanel();
-        panel_1.setBackground(new Color(12, 138, 199));
-        panel_1.setBounds(484, 0, 304, 527);
-        panel.add(panel_1);
-        panel_1.setLayout(null);
+        // Panel de la derecha
+        JPanel panelDerecha = new JPanel();
+        panelDerecha.setBackground(new Color(12, 138, 199));
+        panelDerecha.setBounds(484, 0, 304, 527);
+        panel.add(panelDerecha);
+        panelDerecha.setLayout(null);
 
+        // Imagen de la aplicacion
         JLabel imgApp = new JLabel("");
         imgApp.setBounds(0, -350, 304, 1238);
-        panel_1.add(imgApp);
+        panelDerecha.add(imgApp);
         imgApp.setIcon(new ImageIcon(VentanaLogin.class.getResource("/static/images/imgApp.png")));
 
-        JPanel btnexit = new JPanel();
-        btnexit.setBounds(200, 10, 73, 36);
-        panel_1.add(btnexit);
-        btnexit.addMouseListener(new MouseListener() {
+        JPanel botonexit = new JPanel();
+        botonexit.setBounds(200, 10, 73, 36);
+        panelDerecha.add(botonexit);
+        // Eventos del boton de exit
+        botonexit.addMouseListener(new MouseListener() {
+
+            // Cerrar la aplicacion
             @Override
             public void mouseClicked(MouseEvent e) {
                 System.exit(0);
             }
 
+            // Cambio de color al pasar el mouse
             @Override
             public void mouseEntered(MouseEvent e) {
-                btnexit.setBackground(Color.red);
+                botonexit.setBackground(Color.red);
                 labelExit.setForeground(Color.white);
             }
 
+            // Cambio de color al salir del boton
             @Override
             public void mouseExited(MouseEvent e) {
-                btnexit.setBackground(new Color(12, 138, 199));
+                botonexit.setBackground(new Color(12, 138, 199));
                 labelExit.setForeground(Color.white);
             }
 
@@ -88,39 +98,42 @@ public class VentanaLogin extends JFrame {
                 throw new UnsupportedOperationException("Unimplemented method 'mousePressed'");
             }
         });
-        btnexit.setBackground(new Color(12, 138, 199));
-        btnexit.setLayout(null);
-        btnexit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        // Configuracion del boton de exit
+        botonexit.setBackground(new Color(12, 138, 199));
+        botonexit.setLayout(null);
+        botonexit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         labelExit = new JLabel(" SALIR");
         labelExit.setBounds(0, 0, 60, 30);
-        btnexit.add(labelExit);
+        botonexit.add(labelExit);
         labelExit.setForeground(SystemColor.text);
         labelExit.setFont(new Font("Roboto", Font.PLAIN, 18));
         labelExit.setHorizontalAlignment(SwingConstants.CENTER);
 
-        txtUsuario = new JTextField();
-        txtUsuario.addMouseListener(new MouseAdapter() {
+        // Panel de la izquierda
+        textoUsuario = new JTextField();
+        textoUsuario.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                if (txtUsuario.getText().equals("Ingrese su número de cedula")) {
-                    txtUsuario.setText("");
-                    txtUsuario.setForeground(Color.black);
+                if (textoUsuario.getText().equals("Ingrese su número de cedula")) {
+                    textoUsuario.setText("");
+                    textoUsuario.setForeground(Color.black);
                 }
-                if (String.valueOf(txtContrasena.getPassword()).isEmpty()) {
-                    txtContrasena.setText("********");
-                    txtContrasena.setForeground(Color.gray);
+                if (String.valueOf(textoContrasena.getPassword()).isEmpty()) {
+                    textoContrasena.setText("********");
+                    textoContrasena.setForeground(Color.gray);
                 }
             }
         });
 
-        txtUsuario.setFont(new Font("Roboto", Font.PLAIN, 16));
-        txtUsuario.setText("Ingrese su número de cedula");
-        txtUsuario.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-        txtUsuario.setForeground(SystemColor.activeCaptionBorder);
-        txtUsuario.setBounds(65, 256, 324, 32);
-        panel.add(txtUsuario);
-        txtUsuario.setColumns(10);
+        // Configuracion del panel de la izquierda
+        textoUsuario.setFont(new Font("Roboto", Font.PLAIN, 16));
+        textoUsuario.setText("Ingrese su número de cedula");
+        textoUsuario.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        textoUsuario.setForeground(SystemColor.activeCaptionBorder);
+        textoUsuario.setBounds(65, 256, 324, 32);
+        panel.add(textoUsuario);
+        textoUsuario.setColumns(10);
 
         JSeparator separator = new JSeparator();
         separator.setBackground(new Color(0, 120, 215));
@@ -138,26 +151,26 @@ public class VentanaLogin extends JFrame {
         separator_1.setBounds(65, 393, 324, 2);
         panel.add(separator_1);
 
-        txtContrasena = new JPasswordField();
-        txtContrasena.setText("********");
-        txtContrasena.addMouseListener(new MouseAdapter() {
+        textoContrasena = new JPasswordField();
+        textoContrasena.setText("********");
+        textoContrasena.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                if (String.valueOf(txtContrasena.getPassword()).equals("********")) {
-                    txtContrasena.setText("");
-                    txtContrasena.setForeground(Color.black);
+                if (String.valueOf(textoContrasena.getPassword()).equals("********")) {
+                    textoContrasena.setText("");
+                    textoContrasena.setForeground(Color.black);
                 }
-                if (txtUsuario.getText().isEmpty()) {
-                    txtUsuario.setText("Ingrese su nombre de usuario");
-                    txtUsuario.setForeground(Color.gray);
+                if (textoUsuario.getText().isEmpty()) {
+                    textoUsuario.setText("Ingrese su nombre de usuario");
+                    textoUsuario.setForeground(Color.gray);
                 }
             }
         });
-        txtContrasena.setForeground(SystemColor.activeCaptionBorder);
-        txtContrasena.setFont(new Font("Roboto", Font.PLAIN, 16));
-        txtContrasena.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-        txtContrasena.setBounds(65, 353, 324, 32);
-        panel.add(txtContrasena);
+        textoContrasena.setForeground(SystemColor.activeCaptionBorder);
+        textoContrasena.setFont(new Font("Roboto", Font.PLAIN, 16));
+        textoContrasena.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        textoContrasena.setBounds(65, 353, 324, 32);
+        panel.add(textoContrasena);
 
         JLabel LabelUsuario = new JLabel("USUARIO");
         LabelUsuario.setForeground(SystemColor.textInactiveText);
@@ -172,24 +185,24 @@ public class VentanaLogin extends JFrame {
         panel.add(lblContrasena);
 
         // Boton de Login
-        JPanel btnLogin = new JPanel();
-        btnLogin.addMouseListener(new MouseListener() {
-
+        JPanel botonLogin = new JPanel();
+        botonLogin.addMouseListener(new MouseListener() {
+            // Eventos del boton de login
             @Override
             public void mouseEntered(MouseEvent e) {
-                btnLogin.setBackground(new Color(0, 156, 223));
+                botonLogin.setBackground(new Color(0, 156, 223));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                btnLogin.setBackground(SystemColor.textHighlight);
+                botonLogin.setBackground(SystemColor.textHighlight);
             }
 
             @Override
             public void mouseClicked(MouseEvent e) {
                 // Logica para hacer el Login
-                String cedula = txtUsuario.getText();
-                String contrasena = new String(txtContrasena.getPassword());
+                String cedula = textoUsuario.getText();
+                String contrasena = new String(textoContrasena.getPassword());
 
                 if (cedula.isEmpty() || contrasena.isEmpty()) {
                     // Mostrar mensaje de error
@@ -226,30 +239,30 @@ public class VentanaLogin extends JFrame {
             }
         });
 
-        // Boton de Registro
-        btnLogin.setBackground(SystemColor.textHighlight);
-        btnLogin.setBounds(65, 431, 122, 44);
-        panel.add(btnLogin);
-        btnLogin.setLayout(null);
-        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        // Configuracion del boton de login
+        botonLogin.setBackground(SystemColor.textHighlight);
+        botonLogin.setBounds(65, 431, 122, 44);
+        panel.add(botonLogin);
+        botonLogin.setLayout(null);
+        botonLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        JLabel lblNewLabel = new JLabel("ENTRAR");
-        lblNewLabel.setBounds(0, 0, 122, 44);
-        btnLogin.add(lblNewLabel);
-        lblNewLabel.setForeground(SystemColor.controlLtHighlight);
-        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel.setFont(new Font("Roboto", Font.PLAIN, 18));
+        JLabel labelNewLabel = new JLabel("INGRESAR");
+        labelNewLabel.setBounds(0, 0, 122, 44);
+        botonLogin.add(labelNewLabel);
+        labelNewLabel.setForeground(SystemColor.controlLtHighlight);
+        labelNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        labelNewLabel.setFont(new Font("Roboto", Font.PLAIN, 18));
 
-        JPanel btnRegistro = new JPanel();
-        btnRegistro.addMouseListener(new MouseAdapter() {
+        JPanel botonRegistro = new JPanel();
+        botonRegistro.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                btnRegistro.setBackground(new Color(0, 156, 223));
+                botonRegistro.setBackground(new Color(0, 156, 223));
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                btnRegistro.setBackground(SystemColor.textHighlight);
+                botonRegistro.setBackground(SystemColor.textHighlight);
             }
 
             @Override
@@ -259,26 +272,27 @@ public class VentanaLogin extends JFrame {
                         JOptionPane.INFORMATION_MESSAGE);
             }
         });
-        btnRegistro.setBackground(SystemColor.textHighlight);
-        btnRegistro.setBounds(195, 431, 122, 44);
-        panel.add(btnRegistro);
-        btnRegistro.setLayout(null);
-        btnRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonRegistro.setBackground(SystemColor.textHighlight);
+        botonRegistro.setBounds(195, 431, 122, 44);
+        panel.add(botonRegistro);
+        botonRegistro.setLayout(null);
+        botonRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        JLabel lblRegistro = new JLabel("REGISTRO");
-        lblRegistro.setBounds(0, 0, 122, 44);
-        btnRegistro.add(lblRegistro);
-        lblRegistro.setForeground(SystemColor.controlLtHighlight);
-        lblRegistro.setHorizontalAlignment(SwingConstants.CENTER);
-        lblRegistro.setFont(new Font("Roboto", Font.PLAIN, 18));
+        JLabel labelRegistro = new JLabel("REGISTRO");
+        labelRegistro.setBounds(0, 0, 122, 44);
+        botonRegistro.add(labelRegistro);
+        labelRegistro.setForeground(SystemColor.controlLtHighlight);
+        labelRegistro.setHorizontalAlignment(SwingConstants.CENTER);
+        labelRegistro.setFont(new Font("Roboto", Font.PLAIN, 18));
 
-        JLabel lblNewLabel_1 = new JLabel("");
-        lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_1.setIcon(new ImageIcon(VentanaLogin.class.getResource("/static/images/aH-40px.png")));
-        lblNewLabel_1.setBounds(45, 0, 400, 159);
-        panel.add(lblNewLabel_1);
+        JLabel labelNewLabel_1 = new JLabel("");
+        labelNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+        labelNewLabel_1.setIcon(new ImageIcon(VentanaLogin.class.getResource("/static/images/aH-40px.png")));
+        labelNewLabel_1.setBounds(45, 0, 400, 159);
+        panel.add(labelNewLabel_1);
 
         JPanel header = new JPanel();
+        // Eventos del header
         header.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
@@ -298,11 +312,13 @@ public class VentanaLogin extends JFrame {
         header.setLayout(null);
     }
 
+    // Metodo para mover la ventana
     private void headerMousePressed(java.awt.event.MouseEvent evt) {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }
 
+    // Metodo para mover la ventana
     private void headerMouseDragged(java.awt.event.MouseEvent evt) {
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
